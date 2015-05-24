@@ -1,0 +1,38 @@
+<md-content layout="column" layout-align="start start" flex="30">
+  <md-card >
+    <md-card-content>
+      <md-list layout="column" layout-align="start start" layout-padding layout-margin>
+        <md-list-item ng-repeat="user in vm.userList" layout="column" layout-align="start start" layout-fill layout-margin layout-padding>
+          <div layout="row" layout-align="space-between start" layout-fill>
+            <h3 class="" flex>
+              {{user.name}}
+            </h3>
+            <div flex>
+              <md-button class="md-fab md-mini" aria-label="Pictures">
+                <i class="fa fa-camera"></i>
+                <md-tooltip>View Pictures</md-tooltip>
+              </md-button>
+
+              <md-button class="md-fab md-mini" aria-label="comments" ng-click="vm.getPosts(user.id)">
+                <i class="fa fa-comment"></i>
+                <md-tooltip>View Posts</md-tooltip>
+              </md-button>
+            </div>
+          </div>
+          <div layout="column" layout-align="start start">
+            <span class="md-caption">
+              <i class="fa fa-envelope"></i>
+              {{user.email}}
+            </span>
+            <span class="md-caption">
+              <i class="fa fa-phone "></i>
+              {{user.phone}}
+            </span>
+          </div>
+          <md-divider></md-divider>
+
+        </md-list-item>
+      </md-list>
+    </md-card-content>
+  </md-card>
+</md-content>

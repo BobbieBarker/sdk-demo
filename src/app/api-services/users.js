@@ -20,4 +20,17 @@ angular.module('sdkDemo.api.users', [])
         return data.data
       });
     }
+
+    this.paginate = function(postList, perPage, countAt){
+      var result = {};
+      result.pagination = [];
+      if(!_.isUndefined(postList)){
+        var divisor = Math.ceil(postList.length/perPage);
+        for(var i = countAt; i < divisor; i++){
+          result.pagination.push({currentPage: i});
+        }
+        result.list = _.chunk(postList, perPage);
+      }
+      return result;
+    };
   });

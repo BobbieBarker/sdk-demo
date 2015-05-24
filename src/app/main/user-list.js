@@ -11,7 +11,7 @@ angular.module('sdkDemo.landing.user-list-directive', [])
       templateUrl: 'app/main/html/user-list.html',
       controller: 'userListCtrl as vm',
       bindToController: true
-    }
+    };
   }).controller('userListCtrl', function(Users){
     var vm = this;
 
@@ -19,5 +19,5 @@ angular.module('sdkDemo.landing.user-list-directive', [])
       Users.getUserPosts(id).then(function(data){
         vm.postList = data;
       });
-    }
+    };
   });

@@ -1,0 +1,22 @@
+<md-card layout-fill>
+<md-tabs  md-selected="1" class="md-accent" md-dynamic-height>
+  <md-tab ng-repeat="page in vm.comments.pagination"  label="{{page.currentPage}}">
+  <md-list layout="column" layout-align="start start" layout-padding layout-margin>
+    <md-list-item ng-repeat="comment in vm.comments.list[0]" layout="column" layout-align="start start" layout-fill>
+      <md-whiteframe class="md-whiteframe-z3" layout="column"  layout-padding layout-margin>
+        <md-item-content layout="column" layout-align="start start" layout-padding layout-margin>
+        <div>
+          <p>
+            {{comment.name}}
+          </p>
+          <p>
+            {{comment.body}}
+          </p>
+        </div>
+      </md-item-content>
+      </md-whiteframe>
+    </md-list-item>
+  </md-list>
+  <md-tab>
+</md-tabs>
+</md-card>

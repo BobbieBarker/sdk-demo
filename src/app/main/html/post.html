@@ -1,0 +1,17 @@
+<md-whiteframe class="md-whiteframe-z2" layout="column" layout-align="start start"  layout-padding layout-margin layout-fill>
+  <md-item-content  layout-padding layout-margin>
+    <div flex>
+      <h3 class="md-title">
+        {{vm.post.title}}
+      </h3>
+      <p class="md-body-1">
+        {{vm.post.body}}
+      </p>
+      <md-button class="md-fab md-mini" aria-label="comments" ng-click="vm.getComments(vm.post.id)">
+        <i class="fa fa-comments-o fa-lg"></i>
+        <md-tooltip>View Comments</md-tooltip>
+      </md-button>
+    </div>
+  </md-item-content>
+  <display-comments comments="vm.comments" ng-if="vm.comments" layout-fill></display-comments>
+</md-whiteframe>

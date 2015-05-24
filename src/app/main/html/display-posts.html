@@ -1,56 +1,14 @@
 <md-content  layout="row" layout-align="start start" flex="65" layout-fill layout-margin layout-padding>
   <md-card layout-fill>
-    <md-card-content>
       <md-tabs class="md-accent" md-selected="selectedIndex" md-dynamic-height>
         <md-tab ng-repeat="page in vm.posts.pagination" label="{{page.currentPage}}">
           <md-list layout="column" layout-align="start start" layout-padding layout-margin layout-fill>
             <md-list-item ng-repeat="post in vm.posts.list[selectedIndex]" layout="column" layout-align="start start" layout-fill>
-
-              <md-whiteframe class="md-whiteframe-z2" layout="column" layout-align="start start"  layout-padding layout-margin layout-fill>
-                <md-item-content  layout-padding layout-margin>
-                  <div flex>
-                    <h3 class="md-title">
-                      {{post.title}}
-                    </h3>
-                    <p class="md-body-1">
-                      {{post.body}}
-                    </p>
-                    <md-button class="md-fab md-mini" aria-label="comments" ng-click="vm.getComments(post.id)">
-                      <i class="fa fa-comments-o fa-lg"></i>
-                      <md-tooltip>View Comments</md-tooltip>
-                    </md-button>
-                  </div>
-                </md-item-content>
-                <!-- comments tab starts here -->
-                <md-card layout-fill>
-                <md-tabs  md-selected="selectedIndex" class="md-accent" md-dynamic-height>
-                  <md-tab ng-repeat="page in vm.comments.pagination"  label="{{page.currentPage}}">
-                  <md-list layout="column" layout-align="start start" layout-padding layout-margin>
-                    <md-list-item ng-repeat="comment in vm.comments.list[0]" layout="column" layout-fill>
-                      <md-whiteframe class="md-whiteframe-z3" layout="column" layout-padding layout-margin>
-                        <md-item-content layout="column" layout-align="start start" layout-padding layout-margin>
-                        <div flex>
-                          <p>
-                            {{comment.name}}
-                          </p>
-                          <p>
-                            {{comment.body}}
-                          </p>
-                        </div>
-                      </md-item-content>
-                      </md-whiteframe>
-                    </md-list-item>
-                  </md-list>
-                  <md-tab>
-                </md-tabs>
-              </md-card>
-
-              </md-whiteframe>
+              <view-post post="post"></view-post>
 
             </md-list-item>
           </md-list>
         </md-tab>
       </md-tabs>
-      <md-card-content>
   </md-card>
 <md-content>

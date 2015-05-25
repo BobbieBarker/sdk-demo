@@ -1,4 +1,9 @@
-<md-content  layout="row" layout-align="start start" flex="65" layout-fill layout-margin layout-padding>
+<md-content  layout="column" layout-align="start start" flex="65" layout-fill layout-margin layout-padding>
+  <md-toolbar>
+      <div class="md-toolbar-tools">
+          <span class="md-headline">Posts For: {{vm.currentUser.name}}</span>
+      </div>
+  </md-toolbar>
   <md-card layout-fill>
       <md-tabs class="md-accent" md-selected="selectedIndex" md-dynamic-height>
         <md-tab ng-repeat="page in vm.posts.pagination" label="{{page.currentPage}}">

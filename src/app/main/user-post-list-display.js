@@ -5,7 +5,8 @@ angular.module('sdkDemo.landing.user-post-list', [])
     return {
       restrict: 'E',
       scope: {
-        postList: '='
+        postList: '=',
+        currentUser: '='
       },
       templateUrl: 'app/main/html/display-posts.html',
       controller: 'userPostsCtrl as vm',
@@ -13,13 +14,13 @@ angular.module('sdkDemo.landing.user-post-list', [])
     };
   }).controller('userPostsCtrl', function($scope, Users){
     var vm = this;
-    var itemsPerPage = 5;
+    var itemsPerPage = 3;
 
     $scope.$watch(angular.bind(this, function(){
       return this.postList;
     }), function(newVal, oldVal){
       if(!_.isUndefined(vm.postList)){
-        vm.posts = Users.paginate(vm.postList, itemsPerPage, 1);
+        vm.posts = Users.paginate(vm.postList, itemsPerPage, 0);
       }
     });
   });

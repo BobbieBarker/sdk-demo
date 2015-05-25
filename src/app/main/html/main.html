@@ -1,7 +1,4 @@
 <div layout="row" layout-align="start start" layout-padding layout-margin layout-fill>
-
-<user-list-panel user-list="vm.userList" post-list="vm.postList"></user-list-panel>
-
-<display-user-posts post-list="vm.postList" ng-if="vm.postList"></display-user-posts>
-
+  <user-list-panel user-list="vm.userList" post-list="vm.postList" current-user="currentUser"></user-list-panel>
+  <display-user-posts post-list="vm.postList" ng-if="vm.postList" current-user="currentUser"></display-user-posts>
 </div>
